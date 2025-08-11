@@ -16,17 +16,28 @@ body {
 	padding: 0;
 	background: var(--bg);
 	color: var(--ink);
-	font: 13px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+	font: 18px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
 	min-width: 780px;
 }
+
+a {
+	color: var(--ink);
+}
+
 h1 {
-	font-size: 14px;
+	font-size: 1.2rem;
 	margin: 0;
 }
 
 .fa-heart {
 	color: var(--red);
 }
+
+.credits {
+	display: flex;
+	justify-content: space-between;
+}
+
 .wrap {
 	width: 780px;
 	max-width: 100%;
@@ -58,7 +69,6 @@ header {
 	text-align: center;
 	color: var(--muted);
 	cursor: pointer;
-	min-height: 220px; /* add */
 }
 
 .dropzone.drag {
