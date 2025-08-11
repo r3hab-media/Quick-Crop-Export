@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quick Crop & Export</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css'
+    integrity='sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=='
+    crossorigin='anonymous' />
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Quick Crop & Export</h1>
+      <h4>Extension created with <i class="text-red fa-solid fa-heart"></i> by <a href="https://jarednewnam.com">Jared</a>.</h4>
+    </header>
+
+    <section class="controls">
+      <div class="file-row">
+        <label class="dropzone" id="dropzone">
+          <input type="file" id="fileInput" accept="image/*" hidden>
+          <span id="dzText">Drop image or click to choose</span>
+        </label>
+      </div>
+
+      <div class="grid">
+        <div class="field">
+          <label>Aspect ratio</label>
+          <select id="ratioSelect">
+            <option value="original">Original</option>
+            <option value="1:1">1:1</option>
+            <option value="16:9">16:9</option>
+            <option value="4:3">4:3</option>
+            <option value="3:2">3:2</option>
+            <option value="7:4">7:4</option>
+            <option value="9:16">9:16</option>
+            <option value="custom">Custom…</option>
+          </select>
+        </div>
+
+        <div class="field custom hidden" id="customRatioFields">
+          <label>Custom ratio</label>
+          <div class="row">
+            <input id="ratioW" type="number" min="1" value="7"> :
+            <input id="ratioH" type="number" min="1" value="4">
+            <button id="applyCustom" class="btn">Apply</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Format</label>
+          <select id="format">
+            <option value="image/png">PNG</option>
+            <option value="image/jpeg">JPG</option>
+            <option value="image/webp">WebP</option>
+          </select>
+        </div>
+
+        <div class="field" id="qualityField">
+          <label>Quality (JPG/WebP)</label>
+          <input id="quality" type="range" min="60" max="100" value="92">
+          <span id="qualityVal">92</span>
+        </div>
+
+        <div class="field">
+          <label>Filename</label>
+          <input id="filename" type="text" value="crop">
+        </div>
+
+        <div class="field readout">
+          <label>Crop size</label>
+          <div id="sizeReadout">—</div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button id="fit" class="btn">Fit crop</button>
+        <button id="center" class="btn">Center crop</button>
+        <button id="download" class="btn primary" disabled>Download</button>
+      </div>
+    </section>
+
+    <section class="canvas-wrap">
+      <canvas id="canvas" width="0" height="0"></canvas>
+    </section>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

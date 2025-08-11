@@ -1,0 +1,147 @@
+:root {
+	--bg: #0f1115;
+	--panel: #171924;
+	--ink: #e6e6e6;
+	--muted: #9aa4b2;
+	--accent: #3b82f6;
+	--line: #262a3b;
+	--red: #ff8787;
+}
+* {
+	box-sizing: border-box;
+}
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background: var(--bg);
+	color: var(--ink);
+	font: 13px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+	min-width: 780px;
+}
+h1 {
+	font-size: 14px;
+	margin: 0;
+}
+
+.fa-heart {
+	color: var(--red);
+}
+.wrap {
+	width: 780px;
+	max-width: 100%;
+}
+header {
+	padding: 10px 12px;
+	border-bottom: 1px solid var(--line);
+	background: var(--panel);
+	position: sticky;
+	top: 0;
+	z-index: 3;
+}
+.controls {
+	padding: 10px 12px;
+	background: var(--panel);
+	border-bottom: 1px solid var(--line);
+}
+.file-row {
+	margin-bottom: 10px;
+}
+.dropzone {
+	display: flex; /* replace block */
+	align-items: center; /* add */
+	justify-content: center; /* add */
+	width: 100%;
+	border: 1px dashed #3a4059;
+	border-radius: 10px;
+	padding: 12px;
+	text-align: center;
+	color: var(--muted);
+	cursor: pointer;
+	min-height: 220px; /* add */
+}
+
+.dropzone.drag {
+	background: #1d2333;
+	border-color: var(--accent);
+	color: var(--ink);
+}
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 12px;
+}
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+.field.readout {
+	align-self: end;
+}
+.row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+.hidden {
+	display: none;
+}
+input[type="text"],
+input[type="number"],
+select {
+	width: 100%;
+	padding: 8px;
+	background: #0f1320;
+	color: var(--ink);
+	border: 1px solid #2a2f45;
+	border-radius: 8px;
+}
+#quality {
+	width: 100%;
+}
+.buttons {
+	display: flex;
+	gap: 8px;
+	margin-top: 10px;
+}
+.btn {
+	padding: 8px 10px;
+	background: #20263a;
+	border: 1px solid #2a3150;
+	color: var(--ink);
+	border-radius: 10px;
+	cursor: pointer;
+}
+.btn:hover {
+	border-color: #3a4a7a;
+}
+.btn.primary {
+	background: var(--accent);
+	border-color: var(--accent);
+	color: white;
+}
+.btn[disabled] {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+.canvas-wrap {
+	padding: 12px;
+}
+#canvas {
+	display: block;
+	width: 100%;
+	height: auto;
+	background: #0b0d14;
+	border: 1px solid var(--line);
+	border-radius: 12px;
+}
+
+/* Crop UI */
+.handle {
+	width: 10px;
+	height: 10px;
+	border: 2px solid white;
+	background: transparent;
+	position: absolute;
+}
